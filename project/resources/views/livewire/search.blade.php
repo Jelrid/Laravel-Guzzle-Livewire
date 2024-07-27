@@ -2,9 +2,13 @@
 
     <select type="text" wire:model="searchTerm">
         @foreach ($countries['areas'] as $item)
+        <optgroup label="{{$item['name']}}">
+            @foreach ($item['areas'] as $city)
             <option>
-                {{$item['name']}}
-            </option>
+                {{$city['name']}}
+                </option>
+                @endforeach
+        </optgroup>    
         @endforeach
     </select>
 </div>
